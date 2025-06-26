@@ -10,6 +10,10 @@ package List;
  */
 public interface List <T> {
     
+    public boolean add(T t);
+    
+    public boolean delete(T t);
+    
     public T find(Object id);
     
     public void showall();
