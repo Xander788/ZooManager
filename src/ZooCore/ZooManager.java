@@ -9,5 +9,7 @@ package ZooCore;
  * @author jprod
  */
 public class ZooManager {
-    
+    public static void main(String[] args) {
+        
+    }
 }
