@@ -42,8 +42,8 @@ public class Employees_List implements List <Employee> {
         return false;
     }
 
-    /*@Override*/
-    public Object find(Employee id) {  
+    @Override
+    public Employee find(Object id) {  
         int max = employees.length;
         for (int i = 0; i < max; i++) {
             if(employees[i].getId().equals(id.toString())){
