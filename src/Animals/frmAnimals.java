@@ -4,6 +4,7 @@
  */
 package Animals;
 import Animals.Zone;
+import java.time.LocalDate;
 import javax.swing.DefaultComboBoxModel;
 
 /**
@@ -11,22 +12,31 @@ import javax.swing.DefaultComboBoxModel;
  * @author Gloriana
  */
 public class frmAnimals extends javax.swing.JFrame {
-
-    /**
-     * Creates new form frmAnimals
-     */
+    private AnimalHashMap list;
+    
     public frmAnimals() {
         initComponents();
-        enseñarZonas();
-       
+        list = new AnimalHashMap();
+        //list.add(new Animal("M-0001","Marito","Mono",LocalDate.now()));
+        //list.add(new Animal("M-0002","luis","Mono",LocalDate.now()));
+        //list.add(new Animal("C-0001","jorge","cocodrilo",LocalDate.now()));
+        enseñarZonas(); 
+        enseñarEspecies();
     }
+    
     private void enseñarZonas(){
         DefaultComboBoxModel model = new DefaultComboBoxModel();
         for (Zone zona: Zone.values()) {
-           model.addElement(zona);
-           
+           model.addElement(zona);  
         }
         txtZona.setModel(model);
+    }
+    private void enseñarEspecies(){
+        DefaultComboBoxModel model = new DefaultComboBoxModel();
+        for (String especie: list.getSpecies()) {
+           model.addElement(especie);  
+        }
+        txtEspecie.setModel(model);
     }
     /**
      * This method is called from within the constructor to initialize the form.
