@@ -6,6 +6,7 @@ package Animals;
 
 import List.List;
 import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  *
@@ -42,5 +43,13 @@ public class AnimalHashMap implements List<Animal> {
     @Override
     public void showall() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+    public HashSet getSpecies(){
+        HashSet<String> set = new HashSet<>();
+        for (Animal animal:map.values()) {
+            set.add(animal.getSpecies());
+        }
+        return set;
     }
 }
