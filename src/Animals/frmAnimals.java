@@ -365,7 +365,7 @@ public class frmAnimals extends javax.swing.JFrame {
     }//GEN-LAST:event_btmInsertarActionPerformed
 
     private void btmEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmEliminarActionPerformed
-        // TODO add your handling code here:
+        delete();
     }//GEN-LAST:event_btmEliminarActionPerformed
 
     private void btmBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmBuscarActionPerformed
