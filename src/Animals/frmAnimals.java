@@ -77,6 +77,12 @@ public class frmAnimals extends javax.swing.JFrame {
     }
     
     private void update(){
+        if(validateRequiere()){
+            UtilGui.showErrorMessage(this,"fatan datos requeridos", "error");
+            return;
+        }
+        Zone zone = (Zone)txtZona.getSelectedItem();
+        animal.setZone(zone);
         
     }
     /**
