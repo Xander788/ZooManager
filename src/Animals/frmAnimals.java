@@ -85,6 +85,18 @@ public class frmAnimals extends javax.swing.JFrame {
         animal.setZone(zone);
         
     }
+    
+    private void delete(){
+        if(animal==null){
+            UtilGui.showErrorMessage(this, "Debe especificar el animal", "Eror");
+            return;
+        }
+        if(!list.delete(animal)){
+            JOptionPane.showMessageDialog(this, "No se elimino el resgistro del animl");
+            return;
+        }
+        clear();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
