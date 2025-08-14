@@ -97,6 +97,20 @@ public class frmAnimals extends javax.swing.JFrame {
         }
         clear();
     }
+    
+    private void showdata(){
+        txtId.setText(animal.getId());
+        txtNombre.setText(animal.getName());
+        txtEspecie.setSelectedItem(animal.getSpecies());
+        txtFechaNacimiento.setText(UtilDate.toString(animal.getBirthDate()));
+        txtZona.setSelectedItem(animal.getZone());
+    }
+  
+    private void search(){
+        FrmBuscarAnimals frm = new FrmBuscarAnimals(this,true);
+        frm.setList(list);
+        frm.setVisible(true);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -160,7 +174,7 @@ public class frmAnimals extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel5.setText("Fecha de Nacimiento");
 
-        txtFechaNacimiento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/YYYY"))));
+        txtFechaNacimiento.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
         txtFechaNacimiento.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         txtFechaNacimiento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -278,8 +292,6 @@ public class frmAnimals extends javax.swing.JFrame {
         });
 
         btnActualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Actualizar.png"))); // NOI18N
-        btnActualizar.setMaximumSize(new java.awt.Dimension(54, 55));
-        btnActualizar.setMinimumSize(new java.awt.Dimension(54, 55));
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnActualizarActionPerformed(evt);
@@ -369,7 +381,7 @@ public class frmAnimals extends javax.swing.JFrame {
     }//GEN-LAST:event_btmEliminarActionPerformed
 
     private void btmBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmBuscarActionPerformed
-        // TODO add your handling code here:
+        search();
     }//GEN-LAST:event_btmBuscarActionPerformed
 
     private void txtFechaNacimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFechaNacimientoActionPerformed
